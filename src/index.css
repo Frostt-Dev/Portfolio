@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light Mode (Default) */
+    --color-main: #FFFDF5;
+    /* Warm Off-White */
+    --color-text: #000000;
+    /* Pure Black */
+    --color-primary: #FF6B6B;
+    /* Vibrant Pink/Red */
+    --color-secondary: #4ECDC4;
+    /* Vibrant Teal */
+    --color-accent: #FFE66D;
+    /* Vibrant Yellow */
+    --color-border: #000000;
+    /* Black Border */
+    --color-shadow: #000000;
+    /* Black Shadow */
+    --color-surface: #FFFFFF;
+    /* White Surface */
+  }
+
+  .dark {
+    /* Dark Mode */
+    --color-main: #1a1a1a;
+    /* Dark Grey */
+    --color-text: #ffffff;
+    /* White */
+    --color-primary: #FF6B6B;
+    /* Keep Vibrant Pink */
+    --color-secondary: #4ECDC4;
+    /* Keep Vibrant Teal */
+    --color-accent: #FFE66D;
+    /* Keep Vibrant Yellow */
+    --color-border: #ffffff;
+    /* White Border */
+    --color-shadow: #ffffff;
+    /* White Shadow */
+    --color-surface: #1a1a1a;
+    /* Dark Surface */
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-main);
+    color: var(--color-text);
+    @apply antialiased transition-colors duration-300;
+  }
+
+  /* Neo-Brutalist Selection */
+  ::selection {
+    background-color: var(--color-primary);
+    color: white;
+  }
+}
+
+/* Lenis Smooth Scroll */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
