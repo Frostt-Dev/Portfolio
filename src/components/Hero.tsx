@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import heroProfileImg from '../assets/hero-profile.jpg';
+import resumePdf from '../assets/Resume.pdf';
 
 const Hero = () => {
     return (
@@ -27,14 +28,13 @@ const Hero = () => {
                             >
                                 PROJECTS
                             </Link>
-                            {/* 
                             <a
-                                href="#"
+                                href={resumePdf}
+                                download="Krish_Chourasia_Resume.pdf"
                                 className="px-8 py-3 bg-surface text-text font-bold border-2 border-black shadow-neo hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all"
                             >
                                 DOWNLOAD CV
-                            </a> 
-                            */}
+                            </a>
                         </div>
                     </motion.div>
                 </div>

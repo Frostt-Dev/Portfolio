@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Code, Palette, Terminal, Globe } from 'lucide-react';
+import profileImg from '../assets/profile.jpg';
 
 const skills = [
     { name: 'Frontend Dev', icon: <Code size={24} />, description: 'Building responsive and interactive UIs with React, Tailwind, and TypeScript.' },
@@ -34,7 +35,7 @@ const About = () => {
                         <div className="relative w-72 h-64 md:w-[500px] md:h-96">
                             <div className="absolute inset-0 border-4 border-black bg-accent transform translate-x-4 translate-y-4"></div>
                             <img
-                                src="/src/assets/profile.jpg"
+                                src={profileImg}
                                 alt="Krish Chourasia"
                                 className="relative w-full h-full object-cover border-4 border-black z-10 bg-surface"
                                 loading="lazy"
