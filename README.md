@@ -1,4 +1,4 @@
-# Portfolio 2024
+# Portfolio
 
 A modern, high-performance portfolio website built with **React**, **TypeScript**, and **Vite**, featuring a Neo-Brutalist aesthetic and smooth interactive elements.
 
