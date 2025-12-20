@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import heroProfileImg from '../assets/hero-profile.jpg';
 
 const Hero = () => {
     return (
@@ -26,12 +27,14 @@ const Hero = () => {
                             >
                                 PROJECTS
                             </Link>
+                            {/* 
                             <a
                                 href="#"
                                 className="px-8 py-3 bg-surface text-text font-bold border-2 border-black shadow-neo hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all"
                             >
                                 DOWNLOAD CV
-                            </a>
+                            </a> 
+                            */}
                         </div>
                     </motion.div>
                 </div>
@@ -45,7 +48,7 @@ const Hero = () => {
                     >
                         <div className="absolute inset-0 bg-secondary rounded-full border-4 border-black translate-x-4 translate-y-4"></div>
                         <img
-                            src="/src/assets/hero-profile.jpg"
+                            src={heroProfileImg}
                             alt="Krish Chourasia"
                             className="relative w-full h-full object-cover rounded-full border-4 border-black z-10 bg-surface"
                         />
