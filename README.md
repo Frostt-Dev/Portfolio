@@ -3,7 +3,7 @@
 A modern, high-performance portfolio website built with **React**, **TypeScript**, and **Vite**, featuring a Neo-Brutalist aesthetic and smooth interactive elements.
 
 ## 🚀 Live Demo
-[Check it out here](https://your-portfolio-link.vercel.app/)
+[Check it out here]([https://your-portfolio-link.vercel.app/](https://portfolio-lovat-gamma-12.vercel.app/))
 
 ## ✨ Features
 - **Neo-Brutalist Design**: Bold borders, hard shadows, and high contrast.
