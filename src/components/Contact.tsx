@@ -1,7 +1,8 @@
 
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Phone, Send, Loader2, CheckCircle, XCircle } from 'lucide-react';
-import { useState, useRef, FormEvent } from 'react';
+import { useState, useRef } from 'react';
+import type { FormEvent } from 'react';
 import emailjs from '@emailjs/browser';
 
 const Contact = () => {
