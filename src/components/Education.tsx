@@ -3,16 +3,16 @@ import { GraduationCap, Calendar, MapPin } from 'lucide-react';
 
 const educationData = [
     {
-        degree: "Bachelor of Technology in Computer Science",
-        institution: "University of Technology",
-        year: "2021 - 2025",
-        location: "New Delhi, India",
+        degree: "Bachelor of Technology in Information Technology",
+        institution: "Acropolis Institute Of Technology And Research",
+        year: "2023 - 2027",
+        location: "indore, india",
         description: "Focused on Software Engineering, Data Structures, and Algorithms. Active member of the Coding Club and Tech Society."
     },
     {
         degree: "Higher Secondary Education",
-        institution: "City Public School",
-        year: "2019 - 2021",
+        institution: "Sita Devi Multi Hr. Sec School",
+        year: "2021-2023",
         location: "Indore, India",
         description: "Major in Physics, Chemistry, and Mathematics. Graduated with distinction."
     }
