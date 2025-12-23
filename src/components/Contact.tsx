@@ -85,7 +85,7 @@ const Contact = () => {
                             </div>
                             <div>
                                 <h3 className="text-xl font-bold text-text mb-1">Location</h3>
-                                <p className="text-text/70 font-medium">indore MP</p>
+                                <p className="text-text/70 font-medium">Indore, Madhya Pradesh, India</p>
                             </div>
                         </div>
                     </motion.div>
