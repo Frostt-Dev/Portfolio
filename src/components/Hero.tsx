@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import heroProfileImg from '../assets/hero-profile.jpg';
+import heroProfileImg from '../assets/profile-hero.jpg';
 import resumePdf from '../assets/Resume.pdf';
 
 const Hero = () => {
