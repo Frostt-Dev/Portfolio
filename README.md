@@ -91,8 +91,3 @@ src/
 └── main.tsx          # React application entry point
 ```
 
-## 📄 License
-This project is licensed under the **MIT License**.
-
----
-*Built with ❤️ by Krish Chourasia.*
