@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import PageTransition from '../components/PageTransition';
 import safeGuardImg from '../assets/projects/safeGuard.png';
 import ecommerceImg from '../assets/projects/ecommerce.png';
+import insightBoardImg from '../assets/projects/insightBoard.png';
 
 const projects = [
     {
@@ -19,14 +20,14 @@ const projects = [
         description: "A comprehensive safety platform featuring Fake Call, SOS, Quick Alerts, Live Location Tracking, and a Community Board. Also provides emergency contacts, self-defense videos, and safety guides.",
         tech: ["React", "Google Maps API", "Socket.io", "Node.js", "Express"],
         image: safeGuardImg,
-        github: "https://github.com/Frostt-Dev",
+        github: "https://github.com/Frostt-Dev/Women-Safety-Web-App---SafeGuard",
         live: "https://example.com"
     },
     {
-        title: "Social Media App",
-        description: "A full-stack social media platform with real-time messaging, post sharing, and user profiles. Built with a focus on performance and scalability.",
-        tech: ["Next.js", "Prisma", "PostgreSQL", "Socket.io"],
-        image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=800",
+        title: "Insight Board",
+        description: "A sophisticated analytics replica inspired by Microsoft Power BI. Features modern interactive data visualizations, bar charts, and line graphs built with premium dark mode aesthetics and neo-brutalist styling.",
+        tech: ["React", "D3.js", "Tailwind CSS", "TypeScript"],
+        image: insightBoardImg,
         github: "https://github.com/Frostt-Dev",
         live: "https://example.com"
     },
@@ -69,13 +70,13 @@ const ProjectsPage = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className="group relative bg-surface border-2 border-black shadow-neo p-0 overflow-hidden flex flex-col md:flex-row"
+                                className="group relative bg-surface border-2 border-black shadow-neo p-0 overflow-hidden flex flex-col md:flex-row h-full"
                             >
                                 <div className="w-full md:w-1/2 overflow-hidden border-b-2 md:border-b-0 md:border-r-2 border-black">
                                     <img
                                         src={project.image}
                                         alt={project.title}
-                                        className="w-full h-64 md:h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                        className="w-full h-64 sm:h-72 lg:h-80 object-cover transition-transform duration-500 group-hover:scale-105"
                                     />
                                 </div>
                                 <div className="w-full md:w-1/2 p-8 flex flex-col justify-between">
@@ -101,7 +102,6 @@ const ProjectsPage = () => {
                                         >
                                             <Github size={20} /> Code
                                         </a>
-
                                     </div>
                                 </div>
                             </motion.div>

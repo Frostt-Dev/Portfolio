@@ -6,6 +6,7 @@ import ScrollToTop from './components/ScrollToTop';
 import ScrollProgress from './components/ScrollProgress';
 import Navbar from './components/Navbar';
 import AnimatedRoutes from './components/AnimatedRoutes';
+import LoadingScreen from './components/LoadingScreen';
 
 
 const Footer = lazy(() => import('./components/Footer'));
@@ -18,7 +19,17 @@ const LoadingSpinner = () => (
 );
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
   const [theme, setTheme] = useState('light');
+
+  // Lock scroll during loading
+  useEffect(() => {
+    if (isLoading) {
+      document.body.classList.add('loading-active');
+    } else {
+      document.body.classList.remove('loading-active');
+    }
+  }, [isLoading]);
 
   useEffect(() => {
     if (theme === 'dark') {
@@ -63,6 +74,11 @@ function App() {
 
   return (
     <div className="bg-main min-h-screen text-text cursor-none relative">
+      {/* Loading Screen */}
+      {isLoading && (
+        <LoadingScreen onLoadingComplete={() => setIsLoading(false)} />
+      )}
+
       <ScrollProgress />
       <CustomCursor />
       <Background />
@@ -94,4 +110,5 @@ function App() {
 }
 
 export default App;
+
 
