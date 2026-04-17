@@ -1,83 +1,98 @@
-# Personal Portfolio Website
+<div align="center">
+  <img src="./public/favicon.svg" alt="Logo" width="80" height="80">
+  <h1 align="center">Krish Chourasia - Portfolio</h1>
+  <h3>A Modern, Neo-Brutalist Developer Portfolio</h3>
+</div>
 
-A modern, responsive portfolio website built with HTML, CSS, and JavaScript, enhanced with several libraries for a more dynamic user experience.
+<p align="center">
+  <a href="https://portfolio-lovat-gamma-12.vercel.app/" target="_blank">
+    <img src="https://img.shields.io/badge/Live_Demo-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo" />
+  </a>
+</p>
 
-## Features
+<p align="center">
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" />
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
+  <img src="https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white" />
+</p>
 
-- Responsive design that works on all devices
-- Smooth scrolling navigation
-- Interactive skill progress bars
-- Project showcase with Swiper carousel
-- Animated page elements with AOS (Animate On Scroll)
-- Dynamic typing effect with Typed.js
-- Contact form with validation
-- Modern and clean UI
+## ⚡ Overview
 
-## Sections
+A high-performance, interactive portfolio website built to showcase web development and design skills. It features a bold, **Neo-Brutalist** aesthetic—combining hard shadows, distinct borders, and high contrast with fluid, modern animations.
 
-1. **Home/Hero** - Introduction with animated typing effect
-2. **About** - Personal information and background with subtle animations
-3. **Skills** - Technical abilities with visual indicators
-4. **Projects** - Interactive carousel showcase of work with descriptions and links
-5. **Contact** - Form and contact information
+## ✨ Key Features
 
-## Technologies Used
+- **🎨 Neo-Brutalist Design System**: Custom Tailwind configuration for consistent brutalist shadows, robust borders, and sharp typography.
+- **🚀 Advanced Animations**: Complex page transitions and a staggered custom curtain loading sequence powered by **Framer Motion**.
+- **📜 Smooth Scrolling**: Integrated **Lenis** for seamless momentum-based scrolling, synced flawlessly with element tracking.
+- **🖱️ Magnetic Elements**: Custom interactive hooks making buttons follow the cursor for a premium, tactile user experience.
+- **🌗 Theme Toggle**: Dynamic Dark/Light mode switching.
+- **📧 Serverless Contact Form**: Fully functional contact form powered by **EmailJS**.
 
-- HTML5
-- CSS3 (with custom properties/variables)
-- JavaScript (vanilla JS)
-- JavaScript Libraries:
-  - AOS (Animate On Scroll) - For scrolling animations
-  - Typed.js - For typing animation effect
-  - Swiper - For touch-enabled carousels
-- Font Awesome (for icons)
-- Google Fonts (Poppins)
+## 🛠️ Tech Stack
 
-## Setup Instructions
+| Category | Technology |
+|----------|------------|
+| **Frontend** | React 18, TypeScript |
+| **Build Tool** | Vite |
+| **Styling** | Tailwind CSS 3.4 |
+| **Animation** | Framer Motion |
+| **Icons** | Lucide React |
+| **Scrolling** | Lenis |
+| **Forms** | EmailJS |
 
-1. Clone or download this repository
-2. Open `index.html` in a web browser to view the website
-3. Customize the content in `index.html` with your personal information
-4. Modify `styles.css` to change colors, fonts, and other design elements
-5. Update `script.js` if you need to modify the interactive elements
+## 🚀 Getting Started
 
-## Customization
+Follow these steps to run the project locally on your machine.
 
-- Replace the placeholder images with your own photos and project screenshots
-- Update the personal information in the About section
-- Change the skills to reflect your actual abilities
-- Add your own projects to the Projects section
-- Update the contact information with your real details
-- Modify the typing strings in the typed.js configuration
+### Prerequisites
 
-## Deployment
+- **Node.js** (v18 or higher recommended)
+- **npm** or **yarn**
 
-You can deploy this website on any web hosting service:
+### Installation
 
-- GitHub Pages
-- Netlify
-- Vercel
-- Any traditional web hosting provider
+1.  **Clone the repository**
+    ```bash
+    git clone https://github.com/Frostt-Dev/Portfolio.git
+    cd Portfolio
+    ```
 
-## SEO Optimization
+2.  **Install dependencies**
+    ```bash
+    npm install
+    ```
 
-- The robots.txt file allows search engines to crawl and index your site
-- References a sitemap for better search engine indexing
-- Use descriptive alt tags for images and proper meta tags in the HTML
+3.  **Environment Setup**
+    Create a `.env` file in the root directory and add your keys:
+    ```env
+    VITE_EMAILJS_SERVICE_ID=your_service_id
+    VITE_EMAILJS_TEMPLATE_ID=your_template_id
+    VITE_EMAILJS_PUBLIC_KEY=your_public_key
+    ```
 
-## License
+4.  **Start the Development Server**
+    ```bash
+    npm run dev
+    ```
+    The application will start on `http://localhost:5173/`.
 
-This project is available for personal and commercial use.
+## 📂 Project Structure
 
-## Credits
+```bash
+src/
+├── assets/           # Static assets, images, and brand files
+├── components/       # Reusable UI components (Magnetic, Navbar, Hero, LoadingScreen)
+├── pages/            # Page layouts (Home, ProjectsPage)
+├── App.tsx           # Main application routing and core providers
+├── index.css         # Global styles & Neo-brutalist Theme variables
+└── main.tsx          # React application entry point
+```
 
-- [AOS](https://michalsnik.github.io/aos/) - For scrolling animations
-- [Typed.js](https://github.com/mattboldt/typed.js/) - For the typing effect
-- [Swiper](https://swiperjs.com/) - For the project carousel
-- [Font Awesome](https://fontawesome.com/) - For the icons
-- [Google Fonts](https://fonts.google.com/) - For the typography
-- Placeholder images from [Placeholder.com](https://placeholder.com)
+## 📄 License
+This project is licensed under the **MIT License**.
 
 ---
-
-Made with ❤️ by [Your Name] 
+*Built with ❤️ by Krish Chourasia.*
