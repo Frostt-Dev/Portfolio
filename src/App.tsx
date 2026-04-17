@@ -18,6 +18,8 @@ const LoadingSpinner = () => (
   </div>
 );
 
+import Chatbot from './components/Chatbot';
+
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [theme, setTheme] = useState('light');
@@ -103,6 +105,8 @@ function App() {
           >
             <span className="text-xl">{theme === 'dark' ? '🌙' : '☀️'}</span>
           </button>
+          
+          <Chatbot />
         </div>
       </BrowserRouter>
     </div>
