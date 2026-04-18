@@ -3,6 +3,29 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { MessageSquare, X, Send } from 'lucide-react';
 import { useChatbot } from '../hooks/useChatbot';
 
+const renderMessageContent = (content: string) => {
+  // Simple regex to detect URLs
+  const urlRegex = /(https?:\/\/[^\s]+)/g;
+  const parts = content.split(urlRegex);
+  
+  return parts.map((part, index) => {
+    if (part.match(urlRegex)) {
+      return (
+        <a 
+          key={index} 
+          href={part} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="text-blue-600 underline hover:text-blue-800 break-all font-bold"
+        >
+          {part}
+        </a>
+      );
+    }
+    return <span key={index}>{part}</span>;
+  });
+};
+
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { messages, isLoading, sendMessage } = useChatbot();
@@ -82,10 +105,10 @@ const Chatbot = () => {
                     className={`max-w-[80%] p-3 text-sm border-2 border-black shadow-neo-sm ${
                       msg.role === 'user' 
                         ? 'bg-accent text-black' 
-                        : 'bg-white text-black'
+                        : 'bg-white text-black whitespace-pre-wrap'
                     }`}
                   >
-                    {msg.content}
+                    {renderMessageContent(msg.content)}
                   </div>
                 </motion.div>
               ))}
