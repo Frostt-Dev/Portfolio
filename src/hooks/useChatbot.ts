@@ -37,7 +37,14 @@ export const useChatbot = () => {
         }),
       });
 
-      const data = await response.json();
+      const rawText = await response.text();
+      let data;
+      try {
+        data = JSON.parse(rawText);
+      } catch (err) {
+        // If the server didn't return JSON (e.g. Vite 404 page or Vercel 500 HTML)
+        throw new Error(`Non-JSON response: ${rawText.slice(0, 100)}...`);
+      }
 
       if (!response.ok) {
         throw new Error(data.error || 'Server responded with an error');
