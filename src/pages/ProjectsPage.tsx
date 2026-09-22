@@ -10,7 +10,7 @@ import {
     CheckCircle2,
     Code2,
 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { projects, type Project } from "../data/projects";
 import PageTransition from "../components/PageTransition";
 
@@ -255,23 +255,26 @@ const ProjectModal = ({ project, onClose }: { project: Project; onClose: () => v
 
 const ProjectsPage = () => {
     const [modalProject, setModalProject] = useState<Project | null>(null);
+    const navigate = useNavigate();
 
     return (
         <PageTransition>
             <div className="min-h-screen bg-main text-text relative pb-24">
-                {/* Sticky Top Navbar */}
-                <div className="sticky top-0 z-30 bg-main/90 backdrop-blur-md border-b-2 border-black px-6 py-4">
-                    <div className="container mx-auto max-w-6xl flex items-center justify-between">
-                        <Link
-                            to="/"
-                            className="inline-flex items-center gap-2 text-sm font-black uppercase tracking-wider text-text hover:text-primary transition-colors border-2 border-black bg-surface px-4 py-2 shadow-neo-sm hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none"
+                <div className="container mx-auto px-6 max-w-6xl pt-14 md:pt-16">
+                    {/* Back to Home Button */}
+                    <div className="mb-4">
+                        <button
+                            type="button"
+                            onClick={() => {
+                                navigate('/');
+                                window.scrollTo({ top: 0, behavior: 'instant' });
+                            }}
+                            className="inline-flex items-center gap-2 text-sm font-black uppercase tracking-wider text-text hover:text-primary transition-colors border-2 border-black bg-surface px-5 py-2.5 shadow-neo hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none cursor-pointer select-none"
                         >
-                            <ArrowLeft size={16} /> Back to Home
-                        </Link>
+                            <ArrowLeft size={18} /> Back to Home
+                        </button>
                     </div>
-                </div>
 
-                <div className="container mx-auto px-6 max-w-6xl pt-12">
                     {/* Header Banner */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
