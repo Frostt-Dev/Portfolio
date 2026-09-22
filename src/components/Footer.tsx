@@ -28,10 +28,6 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className="border-t-2 border-black mt-8 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-text/60 font-medium">
-                    <p>&copy; {new Date().getFullYear()} Portfolio. All rights reserved.</p>
-
-                </div>
             </div>
         </footer>
     );
