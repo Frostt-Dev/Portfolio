@@ -87,7 +87,7 @@ const Navbar = ({ theme, toggleTheme }: NavbarProps) => {
                             </a>
                         </Magnetic>
                         <Magnetic>
-                            <a href="https://www.linkedin.com/in/krish-chourasia-b32304339/" target="_blank" rel="noopener noreferrer" className="p-2 text-text hover:text-[#0077b5] hover:bg-secondary border-2 border-transparent hover:border-black transition-all block">
+                            <a href="https://www.linkedin.com/in/krish-chourasia-aba355430/" target="_blank" rel="noopener noreferrer" className="p-2 text-text hover:text-[#0077b5] hover:bg-secondary border-2 border-transparent hover:border-black transition-all block">
                                 <Linkedin size={18} />
                             </a>
                         </Magnetic>
@@ -138,7 +138,7 @@ const Navbar = ({ theme, toggleTheme }: NavbarProps) => {
                                 <a href="https://github.com/Frostt-Dev" target="_blank" rel="noopener noreferrer" className="text-text p-2 rounded hover:bg-[#333] hover:text-white transition-all">
                                     <Github size={24} />
                                 </a>
-                                <a href="https://www.linkedin.com/in/krish-chourasia-b32304339/" target="_blank" rel="noopener noreferrer" className="text-text p-2 rounded hover:bg-[#0077b5] hover:text-white transition-all">
+                                <a href="https://www.linkedin.com/in/krish-chourasia-aba355430/" target="_blank" rel="noopener noreferrer" className="text-text p-2 rounded hover:bg-[#0077b5] hover:text-white transition-all">
                                     <Linkedin size={24} />
                                 </a>
                                 <a href="mailto:krishchourasia4@gmail.com" className="text-text p-2 rounded hover:bg-[#EA4335] hover:text-white transition-all">

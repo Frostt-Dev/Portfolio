@@ -26,7 +26,7 @@ Projects:
 1. Insight Board: A sophisticated analytics replica inspired by Microsoft Power BI. Features interactive data visualizations built with React, D3.js, Tailwind CSS. Link: https://github.com/Frostt-Dev
 2. SafeGuard: A safety platform featuring SOS, Quick Alerts, Live Location Tracking, and a Community Board. Built with React, Google Maps API, Socket.io, Node.js. Link: https://github.com/Frostt-Dev/Women-Safety-Web-App---SafeGuard
 3. E-Commerce Dashboard: A dashboard for managing online stores with real-time sales tracking and inventory management. Built with React, Tailwind CSS, Recharts, Node.js. Link: https://github.com/Frostt-Dev
-4. Task Management Tool: A productivity app featuring drag-and-drop interface and team collaboration. Built with Vue.js, Firebase, Vuex. Link: https://github.com/Frostt-Dev
+4. CodeRAG Studio: A production-grade RAG system for enterprise codebase intelligence. Ingest GitHub repos or local codebases, chunk with AST-aware splitting, store in pgvector, and query with Nvidia Nemotron Ultra via OpenRouter. Features real-time streaming chat and semantic code search. Built with Python, FastAPI, PostgreSQL, pgvector, HTML/CSS/JS. Link: https://github.com/Frostt-Dev
 
 Contact info:
 - Email: krishchourasia4@gmail.com

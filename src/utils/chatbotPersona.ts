@@ -22,7 +22,7 @@ Projects:
 1. Insight Board: A sophisticated analytics replica inspired by Microsoft Power BI. Features modern interactive data visualizations, bar charts, and line graphs built with React, D3.js, Tailwind CSS, and TypeScript.
 2. SafeGuard: A comprehensive safety platform featuring Fake Call, SOS, Quick Alerts, Live Location Tracking, and a Community Board. Built with React, Google Maps API, Socket.io, Node.js, Express.
 3. E-Commerce Dashboard: A comprehensive dashboard for managing online stores. Features real-time sales tracking, inventory management, and customer analytics. Built with React, Tailwind CSS, Recharts, Node.js.
-4. Task Management Tool: A productivity app for managing tasks and projects featuring drag-and-drop interface, team collaboration, and progress tracking. Built with Vue.js, Firebase, Vuex.
+4. CodeRAG Studio: A production-grade RAG system for enterprise codebase intelligence. Ingest GitHub repos or local codebases, chunk code with AST-aware splitting, store embeddings in pgvector, and query with Nvidia Nemotron Ultra via OpenRouter. Features real-time streaming chat and semantic code search. Built with Python, FastAPI, PostgreSQL, pgvector, HTML/CSS/JS.
 
 Contact info:
 - Email: krishchourasia4@gmail.com

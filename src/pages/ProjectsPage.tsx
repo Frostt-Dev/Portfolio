@@ -5,6 +5,7 @@ import PageTransition from '../components/PageTransition';
 import safeGuardImg from '../assets/projects/safeGuard.png';
 import ecommerceImg from '../assets/projects/ecommerce.png';
 import insightBoardImg from '../assets/projects/insightBoard.png';
+import coderagStudioImg from '../assets/projects/coderagStudio.jpg';
 
 const projects = [
     {
@@ -32,10 +33,10 @@ const projects = [
         live: "https://example.com"
     },
     {
-        title: "Task Management Tool",
-        description: "A productivity app for managing tasks and projects. features drag-and-drop interface, team collaboration tools, and progress tracking.",
-        tech: ["Vue.js", "Firebase", "Vuex"],
-        image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&q=80&w=800",
+        title: "CodeRAG Studio",
+        description: "A production-grade RAG (Retrieval-Augmented Generation) system for enterprise codebase intelligence. Ingest GitHub repos or local codebases, chunk code with AST-aware splitting, store embeddings in pgvector, and query with Nvidia Nemotron Ultra via OpenRouter. Features a real-time streaming chat UI, multi-repo support, and semantic code search.",
+        tech: ["Python", "FastAPI", "PostgreSQL", "pgvector", "Nvidia Nemotron", "OpenRouter", "HTML/CSS/JS"],
+        image: coderagStudioImg,
         github: "https://github.com/Frostt-Dev",
         live: "https://example.com"
     }

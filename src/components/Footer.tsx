@@ -19,7 +19,7 @@ const Footer = () => {
                         <a href="https://github.com/Frostt-Dev" target="_blank" rel="noopener noreferrer" className="text-text hover:text-primary transition-colors">
                             <Github size={20} />
                         </a>
-                        <a href="https://www.linkedin.com/in/krish-chourasia-b32304339/" target="_blank" rel="noopener noreferrer" className="text-text hover:text-primary transition-colors">
+                        <a href="https://www.linkedin.com/in/krish-chourasia-aba355430/" target="_blank" rel="noopener noreferrer" className="text-text hover:text-primary transition-colors">
                             <Linkedin size={20} />
                         </a>
                         <a href="https://www.instagram.com/krish.chourasia/" target="_blank" rel="noopener noreferrer" className="text-text hover:text-primary transition-colors">
