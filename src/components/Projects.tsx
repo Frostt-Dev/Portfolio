@@ -1,111 +1,67 @@
+﻿import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { ArrowUpRight, Github } from "lucide-react";
+import { Link } from "react-router-dom";
+import { projects } from "../data/projects";
 
-import { motion } from 'framer-motion';
-import { ExternalLink, Github } from 'lucide-react';
-
-const projects = [
-    {
-        title: 'E-Commerce Platform',
-        description: 'A modern shopping experience built with Next.js and Stripe integration.',
-        tags: ['React', 'Next.js', 'Stripe', 'Tailwind'],
-        image: 'https://images.unsplash.com/photo-1557821552-17105176677c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
-        github: 'https://github.com',
-        demo: 'https://example.com',
-    },
-    {
-        title: 'AI Dashboard',
-        description: 'Analytics dashboard featuring real-time data visualization and AI insights.',
-        tags: ['TypeScript', 'Recharts', 'OpenAI API'],
-        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
-        github: 'https://github.com',
-        demo: 'https://example.com',
-    },
-    {
-        title: 'Social Media App',
-        description: 'Full-featured social network with real-time messaging and notifications.',
-        tags: ['React', 'Firebase', 'Redux'],
-        image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
-        github: 'https://github.com',
-        demo: 'https://example.com',
-    },
-];
-
-import { useMotionValue, useSpring, useTransform } from 'framer-motion';
-
-const TiltCard = ({ project, index }: { project: any, index: number }) => {
-    const x = useMotionValue(0);
-    const y = useMotionValue(0);
-
-    const mouseX = useSpring(x, { stiffness: 500, damping: 100 });
-    const mouseY = useSpring(y, { stiffness: 500, damping: 100 });
-
-    function onMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent) {
-        const { left, top, width, height } = currentTarget.getBoundingClientRect();
-        x.set(clientX - left - width / 2);
-        y.set(clientY - top - height / 2);
-    }
-
-    function onMouseLeave() {
-        x.set(0);
-        y.set(0);
-    }
-
-    const rotateX = useTransform(mouseY, [-300, 300], [10, -10]);
-    const rotateY = useTransform(mouseX, [-300, 300], [-10, 10]);
+const ProjectRow = ({ project, index }: { project: typeof projects[0]; index: number }) => {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, margin: "-80px" });
 
     return (
         <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-            onMouseMove={onMouseMove}
-            onMouseLeave={onMouseLeave}
-            className="group relative bg-surface rounded-none border-2 border-black shadow-neo hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all perspective-1000"
+            ref={ref}
+            initial={{ opacity: 0, y: 40 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: index * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
+            className="group relative border-b-2 border-black last:border-b-0"
         >
-            <div className="relative h-48 overflow-hidden border-b-2 border-black" style={{ transform: "translateZ(20px)" }}>
-                <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-colors z-10" />
-                <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                />
-            </div>
+            <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col md:flex-row items-start md:items-center gap-4 py-8 px-2 md:px-4 cursor-pointer transition-all duration-300 hover:bg-primary/5"
+            >
+                <span className="text-5xl md:text-6xl font-black text-black/10 group-hover:text-primary/30 transition-colors duration-300 w-20 flex-shrink-0 leading-none select-none">
+                    {String(index + 1).padStart(2, "0")}
+                </span>
 
-            <div className="p-6" style={{ transform: "translateZ(30px)" }}>
-                <h3 className="text-xl font-black text-text mb-2 uppercase">{project.title}</h3>
-                <p className="text-text/80 text-sm mb-4 line-clamp-2 font-medium">
-                    {project.description}
-                </p>
+                <div className="hidden md:block w-24 h-16 flex-shrink-0 overflow-hidden border-2 border-black opacity-0 group-hover:opacity-100 transition-all duration-500 scale-90 group-hover:scale-100 shadow-neo-sm">
+                    <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
+                </div>
 
-                <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tags.map((tag: string) => (
-                        <span key={tag} className="px-3 py-1 bg-accent text-black text-xs font-bold border border-black shadow-neo-sm">
-                            {tag}
+                <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-3 mb-1 flex-wrap">
+                        <h3 className="text-2xl md:text-3xl font-black text-text uppercase tracking-tight group-hover:text-primary transition-colors duration-200">
+                            {project.title}
+                        </h3>
+                        <span className="text-xs font-bold uppercase tracking-widest text-text/40 border border-black/20 px-2 py-0.5">
+                            {project.category}
+                        </span>
+                    </div>
+                    <p className="text-text/60 font-medium text-sm md:text-base line-clamp-1">
+                        {project.shortDesc}
+                    </p>
+                </div>
+
+                <div className="hidden lg:flex flex-wrap gap-1.5 max-w-xs justify-end">
+                    {project.tech.slice(0, 3).map((t) => (
+                        <span key={t} className="px-2 py-0.5 bg-secondary border border-black text-black text-xs font-bold">
+                            {t}
                         </span>
                     ))}
+                    {project.tech.length > 3 && (
+                        <span className="px-2 py-0.5 bg-secondary border border-black text-black text-xs font-bold">
+                            +{project.tech.length - 3}
+                        </span>
+                    )}
                 </div>
 
-                <div className="flex items-center justify-between pt-4 border-t-2 border-black">
-                    <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center text-text hover:text-primary transition-colors text-sm font-bold"
-                    >
-                        <Github size={16} className="mr-2" /> Code
-                    </a>
-                    <a
-                        href={project.demo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center text-text hover:text-primary transition-colors text-sm font-bold"
-                    >
-                        Live Demo <ExternalLink size={16} className="ml-2" />
-                    </a>
-                </div>
-            </div>
+                <ArrowUpRight
+                    size={28}
+                    className="flex-shrink-0 text-text/30 group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-200"
+                />
+            </a>
         </motion.div>
     );
 };
@@ -113,23 +69,56 @@ const TiltCard = ({ project, index }: { project: any, index: number }) => {
 const Projects = () => {
     return (
         <section id="projects" className="py-20 bg-transparent">
-            <div className="container mx-auto px-6">
+            <div className="container mx-auto px-6 max-w-6xl">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
-                    className="text-center mb-16"
+                    className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4"
                 >
-                    <h2 className="text-3xl md:text-5xl font-black text-text mb-4 uppercase">Featured Projects</h2>
-                    <div className="w-24 h-2 bg-black mx-auto"></div>
+                    <div>
+                        <p className="text-xs font-bold uppercase tracking-widest text-primary mb-2">Selected Work</p>
+                        <h2 className="text-4xl md:text-6xl font-black text-text uppercase leading-none">Projects</h2>
+                    </div>
+                    <Link
+                        to="/projects"
+                        className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-text hover:text-primary transition-colors border-b-2 border-black hover:border-primary pb-1 self-start md:self-end"
+                    >
+                        View All <ArrowUpRight size={16} />
+                    </Link>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="w-full h-0.5 bg-black mb-0" />
+
+                <div>
                     {projects.map((project, index) => (
-                        <TiltCard key={index} index={index} project={project} />
+                        <ProjectRow key={project.title} project={project} index={index} />
                     ))}
                 </div>
+
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                    className="mt-12 flex flex-col sm:flex-row gap-4"
+                >
+                    <Link
+                        to="/projects"
+                        className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-black uppercase tracking-wide border-2 border-black shadow-neo hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none transition-all"
+                    >
+                        See All Projects <ArrowUpRight size={18} />
+                    </Link>
+                    <a
+                        href="https://github.com/Frostt-Dev"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-8 py-4 bg-surface text-text font-black uppercase tracking-wide border-2 border-black shadow-neo hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none transition-all"
+                    >
+                        <Github size={18} /> GitHub Profile
+                    </a>
+                </motion.div>
             </div>
         </section>
     );
