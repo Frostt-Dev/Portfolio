@@ -80,6 +80,7 @@ const TiltCard = ({
                     rotateX,
                     rotateY,
                     transformStyle: "preserve-3d",
+                    willChange: "transform",
                 }}
                 className={`relative transition-shadow duration-300 ${className}`}
             >

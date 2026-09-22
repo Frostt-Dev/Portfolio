@@ -1,7 +1,9 @@
+import { lazy } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Home from '../pages/Home';
-import ProjectsPage from '../pages/ProjectsPage';
+
+const ProjectsPage = lazy(() => import('../pages/ProjectsPage'));
 
 const AnimatedRoutes = () => {
     const location = useLocation();

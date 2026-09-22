@@ -56,10 +56,10 @@ const Navbar = ({ theme, toggleTheme }: NavbarProps) => {
     ];
 
     return (
-        <nav className={`fixed top-4 left-0 right-0 z-50 transition-all duration-300 flex justify-center`}>
+        <nav className={`fixed top-4 left-0 right-0 z-50 transition-all duration-300 flex justify-center pointer-events-none`}>
             <div className={`
                 flex justify-between items-center px-6 py-3 transition-all duration-300
-                bg-main/80 backdrop-blur-md border-2 border-black shadow-neo w-[95%] md:w-auto
+                bg-main/80 backdrop-blur-md border-2 border-black shadow-neo w-[95%] md:w-auto pointer-events-auto
             `}>
                 <Link to="/" className="text-xl font-bold text-text tracking-tighter mr-8 md:mr-12 uppercase">
                 </Link>

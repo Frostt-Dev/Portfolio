@@ -1,4 +1,4 @@
-import { Suspense, lazy, useState, useEffect } from 'react';
+import { Suspense, useState, useEffect } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import Lenis from 'lenis';
 import Background from './components/Background';
@@ -7,18 +7,15 @@ import ScrollProgress from './components/ScrollProgress';
 import Navbar from './components/Navbar';
 import AnimatedRoutes from './components/AnimatedRoutes';
 import LoadingScreen from './components/LoadingScreen';
-
-
-const Footer = lazy(() => import('./components/Footer'));
+import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
+import Chatbot from './components/Chatbot';
 
 const LoadingSpinner = () => (
   <div className="flex items-center justify-center h-screen text-primary">
     <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
   </div>
 );
-
-import Chatbot from './components/Chatbot';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -53,23 +50,26 @@ function App() {
       history.scrollRestoration = 'manual';
     }
 
+    let rafId: number;
     const lenisInstance = new Lenis({
-      duration: 1.2,
+      duration: 1.0,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
-      touchMultiplier: 2,
+      touchMultiplier: 1.5,
+      smoothWheel: true,
     });
 
     function raf(time: number) {
       lenisInstance.raf(time);
-      requestAnimationFrame(raf);
+      rafId = requestAnimationFrame(raf);
     }
 
-    requestAnimationFrame(raf);
+    rafId = requestAnimationFrame(raf);
     setLenis(lenisInstance);
 
     return () => {
+      cancelAnimationFrame(rafId);
       lenisInstance.destroy();
     };
   }, []);
@@ -93,9 +93,7 @@ function App() {
               <AnimatedRoutes />
             </Suspense>
           </main>
-          <Suspense fallback={null}>
-            <Footer />
-          </Suspense>
+          <Footer />
 
           {/* Fixed Theme Toggle */}
           <button

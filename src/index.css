@@ -43,7 +43,7 @@
     /* Dark Surface */
   }
 
-  html {
+  html:not(.lenis) {
     scroll-behavior: smooth;
   }
 
@@ -61,12 +61,10 @@
 }
 
 /* Lenis Smooth Scroll */
-html.lenis {
+html.lenis,
+html.lenis-smooth {
   height: auto;
-}
-
-.lenis.lenis-smooth {
-  scroll-behavior: auto;
+  scroll-behavior: auto !important;
 }
 
 .lenis.lenis-smooth [data-lenis-prevent] {

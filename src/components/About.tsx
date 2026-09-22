@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Code, Palette, Terminal, Globe, Sparkles, CheckCircle2, Award, Cpu, Database, MapPin } from 'lucide-react';
+import { Code, Palette, Terminal, Globe, Sparkles, CheckCircle2, Award, Cpu, MapPin } from 'lucide-react';
 import profileImg from '../assets/profile.jpg';
 import resumePdf from '../assets/Resume.pdf';
 
